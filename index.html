@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blast Effect Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
+        }
+        #blastEffect {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 200px;
+            height: 200px;
+            margin-left: -100px;
+            margin-top: -100px;
+            background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYyifVMjTAozwMx7Ks3HMdq0Hc2UsP3chRig&s') no-repeat center center;
+            background-size: contain;
+        }
+        #randomText {
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 24px;
+            font-weight: bold;
+        }
+        #clickButton {
+            padding: 15px 30px;
+            font-size: 16px;
+            color: white;
+            background-color: red;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <button id="clickButton">Click Here</button>
+    <div id="blastEffect"></div>
+    <div id="randomText"></div>
+  
+
+    <script>
+     
+        document.getElementById('clickButton').addEventListener('click', function() {
+            const blastEffect = document.getElementById('blastEffect');
+            const randomText = document.getElementById('randomText');
+            const texts = ["Boom!", "Pow!", "Bang!", "Kaboom!", "Wham!"];
+
+            blastEffect.style.display = 'block';
+       
+            // Hide the button after click
+            this.style.display = 'none';
+
+            var para = document.createElement("p");
+            para.innerText = "Iloveeyewww";
+            var img = document.createElement('img');
+            img.setAttribute("src" , "./STK-20240513-WA0015.webp")
+
+            // Show the blast effect for 1 second
+            setTimeout(() => {
+                blastEffect.style.display = 'none';
+               
+                randomText.append(para);
+                randomText.append(img);
+                randomText.style.display = 'block';
+                document.getElementById('randomImg').style.display = 'block';
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
